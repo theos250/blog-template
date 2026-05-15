@@ -1,0 +1,1656 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='true' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' b:templateVersion='1.0.0' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+
+<head>
+  <meta charset='UTF-8'/>
+  <meta content='width=device-width, initial-scale=1.0, minimum-scale=1.0' name='viewport'/>
+  <b:include data='blog' name='all-head-content'/>
+
+  <!-- === SEO META TAGS === -->
+  <title><data:blog.pageTitle/></title>
+  <meta expr:content='data:blog.metaDescription' name='description'/>
+  <meta content='index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1' name='robots'/>
+  <link expr:href='data:blog.canonicalUrl' rel='canonical'/>
+
+  <!-- Open Graph -->
+  <meta expr:content='data:blog.pageTitle' property='og:title'/>
+  <meta expr:content='data:blog.metaDescription' property='og:description'/>
+  <meta content='website' property='og:type'/>
+  <meta expr:content='data:blog.canonicalUrl' property='og:url'/>
+  <b:if cond='data:blog.postImageUrl'>
+    <meta expr:content='data:blog.postImageUrl' property='og:image'/>
+  </b:if>
+
+  <!-- Twitter Card -->
+  <meta content='summary_large_image' name='twitter:card'/>
+  <meta expr:content='data:blog.pageTitle' name='twitter:title'/>
+  <meta expr:content='data:blog.metaDescription' name='twitter:description'/>
+
+  <!-- Schema.org Structured Data -->
+  <script type='application/ld+json'>
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Career Lift Global",
+    "url": "<data:blog.homepageUrl/>",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "<data:blog.homepageUrl/>search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- Google Fonts: Playfair Display + DM Sans -->
+  <link href='https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&amp;family=DM+Sans:wght@300;400;500;600;700&amp;display=swap' rel='stylesheet'/>
+
+  <!-- Font Awesome for icons -->
+  <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css' integrity='sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plh7eqjn08E4yHkxsQKDqFWkRkEMpw==' referrerpolicy='no-referrer' rel='stylesheet'/>
+
+  <b:skin><![CDATA[
+
+/* =============================================
+   CAREER LIFT GLOBAL - PREMIUM BLOGGER TEMPLATE
+   Version: 2.0 | Optimized: SEO, Speed, Ads
+   ============================================= */
+
+/* === CSS VARIABLES === */
+:root {
+  --primary: #0A2342;
+  --primary-mid: #1B3F6E;
+  --accent: #E8A020;
+  --accent-light: #FFF3DC;
+  --success: #16A34A;
+  --danger: #DC2626;
+  --white: #FFFFFF;
+  --gray-50: #F8F9FA;
+  --gray-100: #F1F3F5;
+  --gray-200: #E9ECEF;
+  --gray-400: #ADB5BD;
+  --gray-600: #6C757D;
+  --gray-800: #343A40;
+  --gray-900: #212529;
+  --text: #1A1A2E;
+  --text-muted: #6B7280;
+  --border: #E5E7EB;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.05);
+  --shadow-md: 0 4px 16px rgba(0,0,0,.10);
+  --shadow-lg: 0 10px 40px rgba(0,0,0,.12);
+  --radius: 10px;
+  --radius-lg: 16px;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --transition: .22s ease;
+  --header-h: 68px;
+  --container: 1240px;
+}
+
+/* === RESET & BASE === */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--gray-50);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+button, input, select, textarea { font: inherit; }
+
+/* === LAYOUT === */
+.clg-container { max-width: var(--container); margin: 0 auto; padding: 0 20px; }
+.clg-grid { display: grid; gap: 28px; }
+.clg-row { display: flex; flex-wrap: wrap; gap: 24px; }
+
+/* === SKIP LINK (Accessibility) === */
+.skip-link {
+  position: absolute; top: -100px; left: 12px; z-index: 10000;
+  background: var(--primary); color: var(--white); padding: 8px 16px;
+  border-radius: 0 0 8px 8px; font-size: 14px; font-weight: 600;
+  transition: top .2s;
+}
+.skip-link:focus { top: 0; }
+
+/* === ANNOUNCEMENT BAR === */
+#clg-announce {
+  background: var(--primary);
+  color: var(--white);
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 7px 16px;
+  letter-spacing: .02em;
+}
+#clg-announce a { color: var(--accent); text-decoration: underline; }
+
+/* === HEADER === */
+#clg-header {
+  background: var(--white);
+  position: sticky; top: 0; z-index: 1000;
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  height: var(--header-h);
+}
+.header-inner {
+  max-width: var(--container); margin: 0 auto; padding: 0 20px;
+  display: flex; align-items: center; gap: 20px;
+  height: 100%;
+}
+/* Logo */
+.clg-logo {
+  display: flex; align-items: center; gap: 10px;
+  flex-shrink: 0;
+  font-family: var(--font-display);
+}
+.clg-logo .logo-icon {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-mid) 100%);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent); font-size: 20px;
+}
+.clg-logo .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+.clg-logo .logo-name { font-size: 17px; font-weight: 700; color: var(--primary); letter-spacing: -.01em; }
+.clg-logo .logo-tagline { font-family: var(--font-body); font-size: 10px; color: var(--text-muted); font-weight: 400; letter-spacing: .06em; text-transform: uppercase; }
+
+/* Desktop Nav */
+#clg-nav { margin-left: auto; }
+#clg-nav ul { display: flex; align-items: center; gap: 4px; }
+#clg-nav ul li a {
+  display: flex; align-items: center; gap: 5px;
+  padding: 7px 13px; border-radius: 8px;
+  font-size: 14px; font-weight: 500; color: var(--gray-800);
+  transition: background var(--transition), color var(--transition);
+}
+#clg-nav ul li a:hover { background: var(--gray-100); color: var(--primary); }
+#clg-nav ul li.active > a { background: var(--accent-light); color: var(--primary); }
+#clg-nav ul li a .nav-arrow { font-size: 10px; opacity: .6; }
+
+/* Dropdown */
+#clg-nav li.has-dropdown { position: relative; }
+#clg-nav li.has-dropdown .dropdown {
+  position: absolute; top: calc(100% + 8px); left: 0;
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--radius); box-shadow: var(--shadow-lg);
+  min-width: 210px; padding: 6px 0;
+  opacity: 0; visibility: hidden; transform: translateY(-6px);
+  transition: opacity .2s, transform .2s, visibility .2s;
+  z-index: 100;
+}
+#clg-nav li.has-dropdown:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+#clg-nav .dropdown li a { padding: 8px 16px; border-radius: 0; font-size: 13.5px; }
+#clg-nav .dropdown li a:hover { background: var(--gray-50); }
+
+/* Header CTA */
+.header-cta {
+  display: flex; align-items: center; gap: 10px; margin-left: 12px; flex-shrink: 0;
+}
+.btn-subscribe {
+  background: var(--primary); color: var(--white);
+  padding: 8px 18px; border-radius: 8px; font-size: 13.5px; font-weight: 600;
+  transition: background var(--transition), transform var(--transition);
+  white-space: nowrap;
+}
+.btn-subscribe:hover { background: var(--primary-mid); transform: translateY(-1px); }
+.btn-search-toggle {
+  width: 36px; height: 36px; border-radius: 8px; border: 1px solid var(--border);
+  background: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  color: var(--gray-600); font-size: 15px; transition: background var(--transition);
+}
+.btn-search-toggle:hover { background: var(--gray-100); }
+
+/* Mobile toggle */
+.mobile-toggle {
+  display: none; background: none; border: none; cursor: pointer;
+  padding: 6px; border-radius: 6px; color: var(--primary); font-size: 20px;
+  margin-left: auto;
+}
+
+/* === SEARCH OVERLAY === */
+#clg-search {
+  position: fixed; inset: 0; z-index: 2000;
+  background: rgba(10, 35, 66, .88); backdrop-filter: blur(6px);
+  display: flex; align-items: flex-start; justify-content: center;
+  padding-top: 100px;
+  opacity: 0; visibility: hidden; transition: opacity .25s, visibility .25s;
+}
+#clg-search.open { opacity: 1; visibility: visible; }
+.search-box {
+  width: 100%; max-width: 640px; background: var(--white);
+  border-radius: var(--radius-lg); overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  display: flex; align-items: center;
+}
+.search-box input {
+  flex: 1; padding: 18px 20px; font-size: 18px;
+  border: none; outline: none; color: var(--text);
+}
+.search-box button {
+  background: var(--primary); color: var(--white);
+  padding: 14px 22px; border: none; cursor: pointer;
+  font-size: 16px; font-weight: 600;
+  transition: background var(--transition);
+}
+.search-box button:hover { background: var(--accent); color: var(--primary); }
+.search-close {
+  position: absolute; top: 20px; right: 20px;
+  background: rgba(255,255,255,.15); color: var(--white);
+  border: none; border-radius: 50%; width: 40px; height: 40px;
+  cursor: pointer; font-size: 18px;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* === AD: LEADERBOARD (728x90 / responsive) === */
+.ad-leaderboard {
+  text-align: center; padding: 12px 0;
+  background: var(--white); border-bottom: 1px solid var(--border);
+}
+.ad-label {
+  font-size: 10px; text-transform: uppercase; letter-spacing: .1em;
+  color: var(--gray-400); margin-bottom: 5px;
+}
+
+/* === HERO / FEATURED === */
+#clg-hero {
+  background: var(--white); padding: 36px 0 0;
+  border-bottom: 1px solid var(--border);
+}
+.hero-grid {
+  display: grid; grid-template-columns: 1fr 380px; gap: 28px;
+  align-items: stretch;
+}
+/* Hero main card */
+.hero-main { position: relative; overflow: hidden; border-radius: var(--radius-lg); }
+.hero-main-img {
+  width: 100%; aspect-ratio: 16/9; object-fit: cover;
+  transition: transform .5s ease;
+}
+.hero-main:hover .hero-main-img { transform: scale(1.02); }
+.hero-main-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(10,35,66,.92) 0%, rgba(10,35,66,.4) 55%, transparent 100%);
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 28px;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: var(--accent); color: var(--primary);
+  padding: 4px 10px; border-radius: 20px;
+  font-size: 11px; font-weight: 700; letter-spacing: .04em;
+  text-transform: uppercase; margin-bottom: 10px; width: fit-content;
+}
+.hero-main-title {
+  font-family: var(--font-display); font-size: 26px; font-weight: 700;
+  color: var(--white); line-height: 1.28; margin-bottom: 10px;
+}
+.hero-main-title a { color: inherit; }
+.hero-main-title a:hover { text-decoration: underline; }
+.hero-meta {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 12.5px; color: rgba(255,255,255,.75);
+}
+.hero-meta i { font-size: 11px; }
+
+/* Hero sidebar stack */
+.hero-stack { display: flex; flex-direction: column; gap: 14px; }
+.hero-card {
+  display: flex; gap: 14px; align-items: flex-start;
+  background: var(--gray-50); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 14px;
+  transition: box-shadow var(--transition), transform var(--transition);
+  flex: 1;
+}
+.hero-card:hover { box-shadow: var(--shadow-md); transform: translateX(3px); }
+.hero-card-thumb {
+  width: 90px; height: 70px; object-fit: cover;
+  border-radius: 8px; flex-shrink: 0;
+}
+.hero-card-body { flex: 1; }
+.hero-card-cat {
+  font-size: 10px; text-transform: uppercase; letter-spacing: .06em;
+  color: var(--accent); font-weight: 700; margin-bottom: 4px;
+}
+.hero-card-title {
+  font-size: 14px; font-weight: 600; line-height: 1.38;
+  color: var(--primary); margin-bottom: 5px;
+}
+.hero-card-title a:hover { color: var(--primary-mid); }
+.hero-card-date { font-size: 11.5px; color: var(--text-muted); }
+
+/* Breaking Ticker */
+.breaking-bar {
+  display: flex; align-items: center; gap: 0;
+  background: var(--primary); border-radius: 0 0 0 0;
+  margin-top: 20px; overflow: hidden;
+}
+.breaking-label {
+  background: var(--accent); color: var(--primary);
+  padding: 8px 16px; font-size: 11px; font-weight: 800;
+  text-transform: uppercase; letter-spacing: .08em; flex-shrink: 0;
+  white-space: nowrap;
+}
+.breaking-ticker {
+  padding: 0 20px; overflow: hidden; flex: 1;
+}
+.breaking-ticker marquee { font-size: 13px; color: var(--white); }
+.breaking-ticker marquee a { color: rgba(255,255,255,.85); margin-right: 30px; }
+.breaking-ticker marquee a:hover { color: var(--accent); }
+
+/* === CATEGORY NAV === */
+#clg-cats {
+  background: var(--white); border-bottom: 1px solid var(--border);
+  position: sticky; top: var(--header-h); z-index: 90;
+}
+.cats-inner {
+  max-width: var(--container); margin: 0 auto; padding: 0 20px;
+  display: flex; align-items: center; overflow-x: auto;
+  scrollbar-width: none; gap: 4px;
+}
+.cats-inner::-webkit-scrollbar { display: none; }
+.cat-chip {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 8px 14px; border-radius: 20px; white-space: nowrap;
+  font-size: 13px; font-weight: 500; color: var(--gray-600);
+  transition: background var(--transition), color var(--transition);
+  flex-shrink: 0;
+}
+.cat-chip:hover, .cat-chip.active {
+  background: var(--primary); color: var(--white);
+}
+.cat-chip i { font-size: 12px; }
+
+/* === MAIN CONTENT LAYOUT === */
+.clg-layout {
+  max-width: var(--container); margin: 32px auto; padding: 0 20px;
+  display: grid; grid-template-columns: 1fr 320px; gap: 32px;
+}
+
+/* === SECTION HEADER === */
+.section-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 20px; border-bottom: 2px solid var(--primary); padding-bottom: 10px;
+}
+.section-title {
+  font-family: var(--font-display); font-size: 20px; font-weight: 700;
+  color: var(--primary); display: flex; align-items: center; gap: 8px;
+}
+.section-title::before {
+  content: ''; display: block; width: 4px; height: 20px;
+  background: var(--accent); border-radius: 2px; flex-shrink: 0;
+}
+.section-more {
+  font-size: 12.5px; font-weight: 600; color: var(--primary);
+  display: flex; align-items: center; gap: 4px;
+  border: 1px solid var(--primary); border-radius: 20px;
+  padding: 4px 12px; transition: background var(--transition), color var(--transition);
+}
+.section-more:hover { background: var(--primary); color: var(--white); }
+
+/* === POST CARD (Feed) === */
+.post-card {
+  background: var(--white); border-radius: var(--radius-lg);
+  border: 1px solid var(--border); overflow: hidden;
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+.post-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+.post-card-thumb-wrap { position: relative; overflow: hidden; }
+.post-card-thumb {
+  width: 100%; aspect-ratio: 16/9; object-fit: cover;
+  transition: transform .4s ease;
+}
+.post-card:hover .post-card-thumb { transform: scale(1.04); }
+.post-card-cat {
+  position: absolute; top: 12px; left: 12px;
+  background: var(--primary); color: var(--white);
+  padding: 3px 10px; border-radius: 20px;
+  font-size: 10.5px; font-weight: 700; letter-spacing: .05em;
+  text-transform: uppercase;
+}
+.post-card-body { padding: 16px 18px 18px; }
+.post-card-title {
+  font-family: var(--font-display); font-size: 16.5px; font-weight: 700;
+  color: var(--primary); line-height: 1.36; margin-bottom: 8px;
+}
+.post-card-title a:hover { color: var(--primary-mid); }
+.post-card-excerpt { font-size: 13.5px; color: var(--text-muted); line-height: 1.6; margin-bottom: 12px; }
+.post-card-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: 12px; color: var(--text-muted);
+  border-top: 1px solid var(--gray-100); padding-top: 10px;
+}
+.post-card-author { display: flex; align-items: center; gap: 6px; }
+.post-card-author-img {
+  width: 24px; height: 24px; border-radius: 50%; object-fit: cover;
+}
+.post-card-author-name { font-weight: 600; color: var(--gray-800); }
+.post-card-stats { display: flex; align-items: center; gap: 10px; }
+.post-card-stats span { display: flex; align-items: center; gap: 3px; }
+
+/* Post card: horizontal list variant */
+.post-list-card {
+  display: flex; gap: 14px; align-items: flex-start;
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 14px;
+  transition: box-shadow var(--transition);
+}
+.post-list-card:hover { box-shadow: var(--shadow-sm); }
+.post-list-card + .post-list-card { margin-top: 10px; }
+.post-list-thumb {
+  width: 110px; height: 78px; object-fit: cover;
+  border-radius: 8px; flex-shrink: 0;
+}
+.post-list-body { flex: 1; }
+.post-list-cat {
+  font-size: 10px; text-transform: uppercase; letter-spacing: .06em;
+  color: var(--accent); font-weight: 700; margin-bottom: 3px;
+}
+.post-list-title {
+  font-size: 14.5px; font-weight: 600; line-height: 1.4;
+  color: var(--primary); margin-bottom: 4px;
+}
+.post-list-title a:hover { text-decoration: underline; }
+.post-list-date { font-size: 12px; color: var(--text-muted); }
+
+/* Numbered trending list */
+.trending-list { }
+.trending-item {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 12px 0; border-bottom: 1px solid var(--gray-100);
+}
+.trending-item:last-child { border-bottom: none; }
+.trending-num {
+  font-family: var(--font-display); font-size: 28px; font-weight: 800;
+  color: var(--gray-200); line-height: 1; flex-shrink: 0; width: 32px;
+}
+.trending-num.top { color: var(--accent); }
+.trending-title { font-size: 13.5px; font-weight: 600; line-height: 1.4; color: var(--primary); }
+.trending-title a:hover { text-decoration: underline; }
+.trending-cat { font-size: 11px; color: var(--text-muted); margin-top: 3px; }
+
+/* === AD: IN-FEED NATIVE / RECTANGLE === */
+.ad-rectangle {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 12px;
+  text-align: center; margin: 20px 0;
+}
+.ad-sidebar { margin-bottom: 24px; }
+
+/* === SIDEBAR === */
+.clg-sidebar { }
+
+.sidebar-widget {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 20px;
+  margin-bottom: 24px;
+}
+.widget-title {
+  font-family: var(--font-display); font-size: 16px; font-weight: 700;
+  color: var(--primary); margin-bottom: 14px; padding-bottom: 10px;
+  border-bottom: 2px solid var(--primary);
+  display: flex; align-items: center; gap: 7px;
+}
+.widget-title i { color: var(--accent); }
+
+/* Tags cloud */
+.tags-cloud { display: flex; flex-wrap: wrap; gap: 7px; }
+.tag-pill {
+  display: inline-block; padding: 5px 12px; border-radius: 20px;
+  background: var(--gray-100); color: var(--gray-800);
+  font-size: 12.5px; font-weight: 500; border: 1px solid var(--gray-200);
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+.tag-pill:hover { background: var(--primary); color: var(--white); border-color: var(--primary); }
+
+/* Newsletter widget */
+.newsletter-widget {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-mid) 100%);
+  border-radius: var(--radius-lg); padding: 24px 20px;
+  color: var(--white); margin-bottom: 24px; text-align: center;
+}
+.newsletter-icon { font-size: 32px; margin-bottom: 10px; color: var(--accent); }
+.newsletter-title {
+  font-family: var(--font-display); font-size: 18px; font-weight: 700;
+  margin-bottom: 8px;
+}
+.newsletter-desc { font-size: 13px; color: rgba(255,255,255,.8); margin-bottom: 16px; line-height: 1.5; }
+.newsletter-form { display: flex; flex-direction: column; gap: 8px; }
+.newsletter-input {
+  width: 100%; padding: 10px 14px; border-radius: 8px;
+  border: none; outline: none; font-size: 13.5px; color: var(--text);
+}
+.newsletter-btn {
+  width: 100%; padding: 10px; background: var(--accent);
+  color: var(--primary); border: none; border-radius: 8px;
+  font-size: 14px; font-weight: 700; cursor: pointer;
+  transition: opacity var(--transition);
+}
+.newsletter-btn:hover { opacity: .9; }
+
+/* Stats/Counters widget */
+.stats-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+}
+.stat-card {
+  background: var(--gray-50); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 12px; text-align: center;
+}
+.stat-num {
+  font-family: var(--font-display); font-size: 22px; font-weight: 700;
+  color: var(--primary); line-height: 1;
+}
+.stat-label { font-size: 11px; color: var(--text-muted); margin-top: 3px; }
+
+/* === POST PAGE === */
+.post-header { margin-bottom: 28px; }
+.post-headline {
+  font-family: var(--font-display); font-size: 32px; font-weight: 800;
+  color: var(--primary); line-height: 1.22; margin-bottom: 16px;
+}
+.post-meta-bar {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 16px;
+  font-size: 13px; color: var(--text-muted); margin-bottom: 20px;
+}
+.post-meta-bar .meta-item { display: flex; align-items: center; gap: 5px; }
+.post-hero-img {
+  width: 100%; border-radius: var(--radius-lg); margin-bottom: 28px;
+  aspect-ratio: 16/9; object-fit: cover;
+}
+
+/* Post body typography */
+.post-body { font-size: 16.5px; line-height: 1.78; color: var(--gray-900); }
+.post-body h2 { font-family: var(--font-display); font-size: 24px; font-weight: 700; color: var(--primary); margin: 32px 0 14px; }
+.post-body h3 { font-size: 19px; font-weight: 700; color: var(--primary-mid); margin: 24px 0 10px; }
+.post-body p { margin-bottom: 18px; }
+.post-body a { color: var(--primary-mid); text-decoration: underline; text-underline-offset: 3px; }
+.post-body a:hover { color: var(--primary); }
+.post-body ul, .post-body ol { margin: 0 0 18px 20px; }
+.post-body li { margin-bottom: 6px; }
+.post-body blockquote {
+  border-left: 4px solid var(--accent); background: var(--accent-light);
+  padding: 16px 20px; border-radius: 0 var(--radius) var(--radius) 0;
+  margin: 24px 0; font-style: italic; font-size: 17px;
+}
+.post-body img { border-radius: var(--radius); margin: 20px 0; }
+.post-body pre {
+  background: var(--primary); color: #e2e8f0;
+  padding: 20px; border-radius: var(--radius); overflow-x: auto;
+  font-size: 14px; margin-bottom: 18px;
+}
+.post-body code {
+  background: var(--gray-100); padding: 2px 6px;
+  border-radius: 4px; font-size: 14px; color: var(--primary);
+}
+
+/* Ad: in-article */
+.ad-in-article {
+  margin: 28px auto; text-align: center;
+  background: var(--gray-50); border: 1px dashed var(--border);
+  border-radius: var(--radius); padding: 12px;
+}
+
+/* Share bar */
+.share-bar {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  margin: 28px 0; padding: 16px; background: var(--gray-50);
+  border-radius: var(--radius); border: 1px solid var(--border);
+}
+.share-label { font-size: 13px; font-weight: 600; color: var(--text-muted); margin-right: 4px; }
+.share-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 7px 14px; border-radius: 7px;
+  font-size: 12.5px; font-weight: 600; color: var(--white); border: none; cursor: pointer;
+  transition: opacity var(--transition);
+}
+.share-btn:hover { opacity: .88; }
+.share-btn.fb { background: #1877F2; }
+.share-btn.tw { background: #000; }
+.share-btn.wa { background: #25D366; }
+.share-btn.li { background: #0A66C2; }
+.share-btn.cp { background: var(--gray-600); }
+
+/* Author box */
+.author-box {
+  display: flex; gap: 18px; align-items: flex-start;
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 22px;
+  margin: 28px 0;
+}
+.author-avatar {
+  width: 72px; height: 72px; border-radius: 50%;
+  border: 3px solid var(--accent-light); flex-shrink: 0;
+}
+.author-name { font-weight: 700; color: var(--primary); margin-bottom: 4px; font-size: 16px; }
+.author-bio { font-size: 13.5px; color: var(--text-muted); line-height: 1.6; }
+.author-social { display: flex; gap: 8px; margin-top: 8px; }
+.author-social a {
+  width: 30px; height: 30px; border-radius: 6px;
+  background: var(--gray-100); display: flex; align-items: center; justify-content: center;
+  color: var(--gray-600); font-size: 13px;
+  transition: background var(--transition), color var(--transition);
+}
+.author-social a:hover { background: var(--primary); color: var(--white); }
+
+/* Related posts */
+.related-posts { margin: 32px 0; }
+.related-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+}
+
+/* Comments section */
+.comments-wrap { margin-top: 28px; }
+.comments-title {
+  font-family: var(--font-display); font-size: 20px; font-weight: 700;
+  color: var(--primary); margin-bottom: 20px; padding-bottom: 10px;
+  border-bottom: 2px solid var(--primary); display: flex; align-items: center; gap: 8px;
+}
+
+/* === PAGINATION === */
+.clg-pagination {
+  display: flex; justify-content: center; align-items: center; gap: 6px;
+  margin: 32px 0;
+}
+.page-btn {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 8px 16px; border-radius: 8px; font-size: 14px; font-weight: 500;
+  border: 1px solid var(--border); background: var(--white); color: var(--gray-700);
+  cursor: pointer; transition: background var(--transition), color var(--transition);
+}
+.page-btn:hover, .page-btn.active {
+  background: var(--primary); color: var(--white); border-color: var(--primary);
+}
+.page-dots { color: var(--text-muted); padding: 0 4px; }
+
+/* === FOOTER === */
+#clg-footer {
+  background: var(--primary); color: var(--white);
+  margin-top: 48px;
+}
+.footer-top {
+  max-width: var(--container); margin: 0 auto; padding: 48px 20px 32px;
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px;
+}
+.footer-brand .logo-name { font-size: 20px; color: var(--white); }
+.footer-brand .logo-tagline { color: rgba(255,255,255,.6); }
+.footer-brand-desc { font-size: 13.5px; color: rgba(255,255,255,.65); line-height: 1.7; margin: 14px 0; }
+.footer-social { display: flex; gap: 8px; }
+.footer-social a {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: rgba(255,255,255,.1); color: var(--white);
+  display: flex; align-items: center; justify-content: center; font-size: 14px;
+  transition: background var(--transition);
+}
+.footer-social a:hover { background: var(--accent); color: var(--primary); }
+.footer-col-title {
+  font-size: 13px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .06em; color: var(--accent); margin-bottom: 14px;
+}
+.footer-links { display: flex; flex-direction: column; gap: 8px; }
+.footer-links a {
+  font-size: 13.5px; color: rgba(255,255,255,.7);
+  transition: color var(--transition);
+  display: flex; align-items: center; gap: 6px;
+}
+.footer-links a:hover { color: var(--white); }
+.footer-links a i { font-size: 10px; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.1);
+  max-width: var(--container); margin: 0 auto; padding: 16px 20px;
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: 12.5px; color: rgba(255,255,255,.5); flex-wrap: wrap; gap: 8px;
+}
+.footer-bottom a { color: rgba(255,255,255,.65); }
+.footer-bottom a:hover { color: var(--white); }
+
+/* === SCROLL TO TOP === */
+#scroll-top {
+  position: fixed; bottom: 24px; right: 24px; z-index: 500;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--primary); color: var(--white);
+  border: none; cursor: pointer; font-size: 18px;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: var(--shadow-md);
+  opacity: 0; transform: translateY(12px);
+  transition: opacity .3s, transform .3s;
+  pointer-events: none;
+}
+#scroll-top.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+#scroll-top:hover { background: var(--accent); color: var(--primary); }
+
+/* === MOBILE MENU === */
+#clg-mobile-nav {
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 1500;
+  background: var(--white); transform: translateX(-100%);
+  transition: transform .3s ease; overflow-y: auto; padding: 0 0 40px;
+}
+#clg-mobile-nav.open { transform: translateX(0); }
+.mobile-nav-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 20px; border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; background: var(--white); z-index: 1;
+}
+.mobile-nav-close {
+  background: var(--gray-100); border: none; border-radius: 50%;
+  width: 36px; height: 36px; cursor: pointer; font-size: 18px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gray-800);
+}
+.mobile-nav-links { padding: 12px 0; }
+.mobile-nav-links a {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 24px; font-size: 15px; font-weight: 500; color: var(--gray-800);
+  border-bottom: 1px solid var(--gray-100);
+}
+.mobile-nav-links a i { color: var(--primary); font-size: 15px; width: 20px; text-align: center; }
+.mobile-nav-links a:active { background: var(--gray-50); }
+.mobile-search-bar { padding: 16px 20px; border-bottom: 1px solid var(--border); }
+.mobile-search-bar form { display: flex; gap: 8px; }
+.mobile-search-bar input {
+  flex: 1; padding: 9px 14px; border: 1px solid var(--border);
+  border-radius: 8px; font-size: 14px;
+}
+.mobile-search-bar button {
+  background: var(--primary); color: var(--white); border: none;
+  border-radius: 8px; padding: 0 14px; cursor: pointer; font-size: 14px;
+}
+
+/* === LOADING SKELETON === */
+.skeleton { background: linear-gradient(90deg, var(--gray-100) 25%, var(--gray-200) 50%, var(--gray-100) 75%); background-size: 200% 100%; animation: shimmer 1.6s infinite; border-radius: 6px; }
+@keyframes shimmer { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
+
+/* === PROGRESS BAR === */
+#reading-progress {
+  position: fixed; top: 0; left: 0; height: 3px; z-index: 9999;
+  background: linear-gradient(90deg, var(--accent), var(--primary));
+  width: 0%; transition: width .1s linear;
+}
+
+/* === COOKIE BANNER === */
+#clg-cookie {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 2000;
+  background: var(--primary); color: var(--white);
+  padding: 14px 20px;
+  display: flex; align-items: center; justify-content: center; gap: 16px;
+  flex-wrap: wrap; font-size: 13.5px;
+  transform: translateY(100%); transition: transform .4s ease;
+}
+#clg-cookie.show { transform: translateY(0); }
+#clg-cookie a { color: var(--accent); text-decoration: underline; }
+.cookie-accept {
+  background: var(--accent); color: var(--primary); border: none;
+  padding: 7px 18px; border-radius: 7px; font-size: 13px; font-weight: 700;
+  cursor: pointer; white-space: nowrap;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 1060px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-stack { flex-direction: row; }
+  .hero-card { flex: 1; }
+  .clg-layout { grid-template-columns: 1fr 280px; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+  .related-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  :root { --header-h: 56px; }
+  #clg-nav, .header-cta .btn-subscribe { display: none; }
+  .mobile-toggle { display: flex; }
+  .header-inner { gap: 12px; }
+  .clg-logo .logo-text { display: none; }
+  .clg-logo .logo-icon { width: 36px; height: 36px; font-size: 18px; }
+  .clg-layout { grid-template-columns: 1fr; }
+  .clg-sidebar { display: none; }
+  .hero-stack { flex-direction: column; }
+  .hero-main-title { font-size: 20px; }
+  .post-headline { font-size: 24px; }
+  .related-grid { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr; gap: 24px; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .author-box { flex-direction: column; }
+}
+
+@media (max-width: 480px) {
+  .clg-container, .clg-layout { padding-left: 12px; padding-right: 12px; }
+  .hero-main-title { font-size: 18px; }
+  .post-headline { font-size: 21px; }
+  .share-bar { gap: 6px; }
+  .share-btn { padding: 6px 10px; font-size: 11.5px; }
+  .hero-card-thumb { width: 75px; height: 58px; }
+}
+
+/* === PRINT === */
+@media print {
+  #clg-header, #clg-footer, .clg-sidebar, .ad-leaderboard, .ad-rectangle, .ad-sidebar, #scroll-top, #clg-cookie, .share-bar { display: none !important; }
+  .clg-layout { grid-template-columns: 1fr; }
+  .post-body { font-size: 12pt; line-height: 1.6; }
+}
+
+  ]]></b:skin>
+</head>
+
+<body>
+
+  <!-- Skip Navigation -->
+  <a class='skip-link' href='#main-content'>Skip to Content</a>
+
+  <!-- Reading Progress Bar -->
+  <div id='reading-progress'/>
+
+  <!-- ========== ANNOUNCEMENT BAR ========== -->
+  <div id='clg-announce'>
+    &#x1F4BC; New Resources Added Weekly — <a href='/'>Browse Latest Career Guides</a>
+  </div>
+
+  <!-- ========== AD: LEADERBOARD ========== -->
+  <div class='ad-leaderboard'>
+    <div class='ad-label'>Advertisement</div>
+    <b:include name='google-adsense-leaderboard'/>
+    <!-- Place your AdSense 728x90 or responsive ad code here -->
+  </div>
+
+  <!-- ========== HEADER ========== -->
+  <header id='clg-header' role='banner'>
+    <div class='header-inner'>
+
+      <!-- Logo -->
+      <a class='clg-logo' href='/' title='Career Lift Global - Home'>
+        <div class='logo-icon' aria-hidden='true'>
+          <i class='fas fa-chart-line'/>
+        </div>
+        <div class='logo-text'>
+          <span class='logo-name'>Career Lift Global</span>
+          <span class='logo-tagline'>Elevate Your Career</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav id='clg-nav' aria-label='Main Navigation'>
+        <ul role='menubar'>
+          <li role='none'><a href='/' role='menuitem'><i class='fas fa-home'/> Home</a></li>
+          <li class='has-dropdown' role='none'>
+            <a href='/search/label/Career Tips' role='menuitem'>
+              Career Tips <i class='fas fa-chevron-down nav-arrow'/>
+            </a>
+            <ul class='dropdown' role='menu'>
+              <li><a href='/search/label/Resume' role='menuitem'><i class='fas fa-file-alt'/> Resume Writing</a></li>
+              <li><a href='/search/label/Interview' role='menuitem'><i class='fas fa-comments'/> Interview Prep</a></li>
+              <li><a href='/search/label/LinkedIn' role='menuitem'><i class='fab fa-linkedin'/> LinkedIn Hacks</a></li>
+              <li><a href='/search/label/Negotiation' role='menuitem'><i class='fas fa-handshake'/> Salary Negotiation</a></li>
+            </ul>
+          </li>
+          <li class='has-dropdown' role='none'>
+            <a href='/search/label/Jobs' role='menuitem'>
+              Jobs <i class='fas fa-chevron-down nav-arrow'/>
+            </a>
+            <ul class='dropdown' role='menu'>
+              <li><a href='/search/label/Remote Jobs' role='menuitem'><i class='fas fa-laptop-house'/> Remote Jobs</a></li>
+              <li><a href='/search/label/Entry Level' role='menuitem'><i class='fas fa-user-graduate'/> Entry Level</a></li>
+              <li><a href='/search/label/International' role='menuitem'><i class='fas fa-globe'/> International</a></li>
+            </ul>
+          </li>
+          <li role='none'><a href='/search/label/Scholarships' role='menuitem'><i class='fas fa-graduation-cap'/> Scholarships</a></li>
+          <li role='none'><a href='/search/label/Skills' role='menuitem'><i class='fas fa-lightbulb'/> Skills</a></li>
+          <li role='none'><a href='/p/about.html' role='menuitem'>About</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class='header-cta'>
+        <button aria-label='Search' class='btn-search-toggle' id='searchToggle' title='Search'>
+          <i class='fas fa-search'/>
+        </button>
+        <a class='btn-subscribe' href='#newsletter'>Subscribe</a>
+        <button aria-label='Open menu' class='mobile-toggle' id='mobileToggle'>
+          <i class='fas fa-bars'/>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ========== SEARCH OVERLAY ========== -->
+  <div id='clg-search' role='dialog' aria-label='Search'>
+    <button class='search-close' id='searchClose' aria-label='Close search'>
+      <i class='fas fa-times'/>
+    </button>
+    <div class='search-box'>
+      <b:widget id='search1' locked='false' title='Search' type='BlogSearch'>
+        <b:widget-settings>
+          <b:widget-setting name='searchButtonText'>Search</b:widget-setting>
+        </b:widget-settings>
+        <b:includable id='main'>
+          <b:include name='searchForm'/>
+        </b:includable>
+      </b:widget>
+    </div>
+  </div>
+
+  <!-- ========== MOBILE NAV ========== -->
+  <nav id='clg-mobile-nav' aria-label='Mobile Navigation'>
+    <div class='mobile-nav-head'>
+      <a class='clg-logo' href='/'>
+        <div class='logo-icon'><i class='fas fa-chart-line'/></div>
+        <div class='logo-text'>
+          <span class='logo-name'>Career Lift Global</span>
+        </div>
+      </a>
+      <button class='mobile-nav-close' id='mobileClose' aria-label='Close menu'>
+        <i class='fas fa-times'/>
+      </button>
+    </div>
+    <div class='mobile-search-bar'>
+      <b:widget id='search2' locked='false' title='Search' type='BlogSearch'>
+        <b:includable id='main'><b:include name='searchForm'/></b:includable>
+      </b:widget>
+    </div>
+    <div class='mobile-nav-links'>
+      <a href='/'><i class='fas fa-home'/> Home</a>
+      <a href='/search/label/Career Tips'><i class='fas fa-briefcase'/> Career Tips</a>
+      <a href='/search/label/Resume'><i class='fas fa-file-alt'/> Resume Writing</a>
+      <a href='/search/label/Interview'><i class='fas fa-comments'/> Interview Prep</a>
+      <a href='/search/label/Jobs'><i class='fas fa-search'/> Job Search</a>
+      <a href='/search/label/Remote Jobs'><i class='fas fa-laptop-house'/> Remote Jobs</a>
+      <a href='/search/label/Scholarships'><i class='fas fa-graduation-cap'/> Scholarships</a>
+      <a href='/search/label/Skills'><i class='fas fa-lightbulb'/> Skills</a>
+      <a href='/p/about.html'><i class='fas fa-user'/> About</a>
+      <a href='/p/contact.html'><i class='fas fa-envelope'/> Contact</a>
+    </div>
+  </nav>
+
+  <!-- ========== CATEGORY NAV ========== -->
+  <nav id='clg-cats' aria-label='Category Navigation'>
+    <div class='cats-inner'>
+      <a class='cat-chip active' href='/'><i class='fas fa-th-large'/> All</a>
+      <a class='cat-chip' href='/search/label/Career Tips'><i class='fas fa-briefcase'/> Career Tips</a>
+      <a class='cat-chip' href='/search/label/Resume'><i class='fas fa-file-alt'/> Resume</a>
+      <a class='cat-chip' href='/search/label/Interview'><i class='fas fa-comments'/> Interview</a>
+      <a class='cat-chip' href='/search/label/Jobs'><i class='fas fa-search'/> Jobs</a>
+      <a class='cat-chip' href='/search/label/Remote Jobs'><i class='fas fa-laptop-house'/> Remote</a>
+      <a class='cat-chip' href='/search/label/Scholarships'><i class='fas fa-graduation-cap'/> Scholarships</a>
+      <a class='cat-chip' href='/search/label/Skills'><i class='fas fa-lightbulb'/> Skills</a>
+      <a class='cat-chip' href='/search/label/Entrepreneurship'><i class='fas fa-rocket'/> Startups</a>
+      <a class='cat-chip' href='/search/label/Networking'><i class='fas fa-network-wired'/> Networking</a>
+    </div>
+  </nav>
+
+  <!-- ========== MAIN WRAPPER ========== -->
+  <main id='main-content' role='main'>
+
+    <!-- === HERO SECTION (Homepage only) === -->
+    <b:if cond='data:blog.pageType == &quot;index&quot;'>
+    <section id='clg-hero' aria-label='Featured Posts'>
+      <div class='clg-container'>
+
+        <b:widget id='FeaturedPost1' locked='false' title='Featured Posts' type='BlogPosts'>
+          <b:widget-settings>
+            <b:widget-setting name='showDateHeader'>false</b:widget-setting>
+            <b:widget-setting name='style'>SIDEBAR</b:widget-setting>
+          </b:widget-settings>
+          <b:includable id='main'>
+            <div class='hero-grid'>
+              <!-- Hero Main: First Post -->
+              <div class='hero-main'>
+                <b:loop values='data:posts' var='post' index='i'>
+                  <b:if cond='data:i == 0'>
+                    <b:if cond='data:post.featuredImage'>
+                      <img alt='' class='hero-main-img' expr:src='data:post.featuredImage.url'/>
+                    </b:if>
+                    <div class='hero-main-overlay'>
+                      <span class='hero-badge'><i class='fas fa-fire'/> Featured</span>
+                      <h2 class='hero-main-title'>
+                        <a expr:href='data:post.url'><data:post.title/></a>
+                      </h2>
+                      <div class='hero-meta'>
+                        <span><i class='fas fa-user'/> <data:post.author/></span>
+                        <span><i class='fas fa-clock'/> <data:post.dateHeader/></span>
+                      </div>
+                    </div>
+                  </b:if>
+                </b:loop>
+              </div>
+              <!-- Hero Sidebar: Posts 2-4 -->
+              <div class='hero-stack'>
+                <b:loop values='data:posts' var='post' index='i'>
+                  <b:if cond='data:i != 0'>
+                    <b:if cond='data:i &lt; 4'>
+                      <article class='hero-card'>
+                        <b:if cond='data:post.featuredImage'>
+                          <img alt='' class='hero-card-thumb' expr:src='data:post.featuredImage.url'/>
+                        </b:if>
+                        <div class='hero-card-body'>
+                          <div class='hero-card-cat'>Latest</div>
+                          <h3 class='hero-card-title'>
+                            <a expr:href='data:post.url'><data:post.title/></a>
+                          </h3>
+                          <span class='hero-card-date'><i class='fas fa-clock'/> <data:post.dateHeader/></span>
+                        </div>
+                      </article>
+                    </b:if>
+                  </b:if>
+                </b:loop>
+              </div>
+            </div>
+          </b:includable>
+        </b:widget>
+
+        <!-- Breaking Ticker -->
+        <div class='breaking-bar'>
+          <span class='breaking-label'><i class='fas fa-bolt'/> Breaking</span>
+          <div class='breaking-ticker'>
+            <marquee behavior='scroll' direction='left' scrollamount='4'>
+              <a href='/search/label/Career Tips'>Top 10 Resume Mistakes to Avoid in 2025</a>
+              <a href='/search/label/Remote Jobs'>Best Remote Jobs Hiring Now — No Experience Required</a>
+              <a href='/search/label/Scholarships'>Full Scholarships Open for African Students 2025</a>
+              <a href='/search/label/Interview'>Master the STAR Interview Method</a>
+            </marquee>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    </b:if>
+    <!-- /hero -->
+
+    <!-- ========== CONTENT + SIDEBAR ========== -->
+    <div class='clg-layout'>
+
+      <!-- === MAIN FEED === -->
+      <div id='clg-content'>
+
+        <!-- INDEX PAGE: Post Grid -->
+        <b:if cond='data:blog.pageType == &quot;index&quot;'>
+
+          <div class='section-header'>
+            <h2 class='section-title'>Latest Articles</h2>
+            <a class='section-more' href='/'>View All <i class='fas fa-arrow-right'/></a>
+          </div>
+
+          <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog'>
+            <b:includable id='main'>
+              <div style='display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px;'>
+                <b:loop values='data:posts' var='post' index='i'>
+
+                  <!-- Ad after every 4 posts -->
+                  <b:if cond='data:i == 4'>
+                    <div style='grid-column:1/-1;'>
+                      <div class='ad-rectangle'>
+                        <div class='ad-label'>Sponsored</div>
+                        <!-- AdSense 728x90 responsive -->
+                      </div>
+                    </div>
+                  </b:if>
+
+                  <article class='post-card' itemscope='' itemtype='http://schema.org/BlogPosting'>
+                    <div class='post-card-thumb-wrap'>
+                      <b:if cond='data:post.featuredImage'>
+                        <img alt='' class='post-card-thumb' expr:src='data:post.featuredImage.url' itemprop='image' loading='lazy'/>
+                      </b:if>
+                      <b:if cond='data:post.labels'>
+                        <span class='post-card-cat' itemprop='keywords'>
+                          <data:post.labels.first.name/>
+                        </span>
+                      </b:if>
+                    </div>
+                    <div class='post-card-body'>
+                      <h3 class='post-card-title' itemprop='headline'>
+                        <a expr:href='data:post.url' itemprop='url'><data:post.title/></a>
+                      </h3>
+                      <p class='post-card-excerpt' itemprop='description'>
+                        <data:post.snippet length='90'/>...
+                      </p>
+                      <div class='post-card-footer'>
+                        <div class='post-card-author'>
+                          <b:if cond='data:post.author.authorPhoto'>
+                            <img alt='' class='post-card-author-img' expr:src='data:post.author.authorPhoto.url'/>
+                          </b:if>
+                          <span class='post-card-author-name' itemprop='author'><data:post.author.name/></span>
+                        </div>
+                        <div class='post-card-stats'>
+                          <span itemprop='datePublished'><i class='fas fa-clock'/> <data:post.dateHeader/></span>
+                          <span><i class='fas fa-comment-dots'/> <data:post.numComments/></span>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+
+                </b:loop>
+              </div>
+
+              <!-- Pagination -->
+              <div class='clg-pagination'>
+                <b:include name='nextprev'/>
+              </div>
+
+            </b:includable>
+          </b:widget>
+
+        </b:if>
+        <!-- /index -->
+
+        <!-- ITEM PAGE: Single Post -->
+        <b:if cond='data:blog.pageType == &quot;item&quot;'>
+          <b:widget id='Blog2' locked='true' title='Blog Posts' type='Blog'>
+            <b:includable id='main'>
+              <b:loop values='data:posts' var='post'>
+                <article itemscope='' itemtype='http://schema.org/BlogPosting'>
+
+                  <!-- Post Header -->
+                  <div class='post-header'>
+                    <b:if cond='data:post.labels'>
+                      <div style='margin-bottom:10px;'>
+                        <b:loop values='data:post.labels' var='label'>
+                          <a class='tag-pill' expr:href='data:label.url'><data:label.name/></a>
+                        </b:loop>
+                      </div>
+                    </b:if>
+                    <h1 class='post-headline' itemprop='headline'><data:post.title/></h1>
+                    <div class='post-meta-bar'>
+                      <span class='meta-item'><i class='fas fa-user'/> <data:post.author.name/></span>
+                      <span class='meta-item'><i class='fas fa-calendar-alt'/> <data:post.dateHeader/></span>
+                      <span class='meta-item'><i class='fas fa-clock'/> <data:post.readingTime/> min read</span>
+                      <span class='meta-item'><i class='fas fa-comment-dots'/> <data:post.numComments/> Comments</span>
+                    </div>
+                  </div>
+
+                  <!-- Featured Image -->
+                  <b:if cond='data:post.featuredImage'>
+                    <img alt='' class='post-hero-img' expr:src='data:post.featuredImage.url' itemprop='image' loading='eager'/>
+                  </b:if>
+
+                  <!-- Ad: Above content -->
+                  <div class='ad-in-article'>
+                    <div class='ad-label'>Advertisement</div>
+                    <!-- AdSense responsive -->
+                  </div>
+
+                  <!-- Post Body -->
+                  <div class='post-body' itemprop='articleBody'>
+                    <data:post.body/>
+                  </div>
+
+                  <!-- Ad: Below content -->
+                  <div class='ad-in-article'>
+                    <div class='ad-label'>Advertisement</div>
+                    <!-- AdSense responsive -->
+                  </div>
+
+                  <!-- Share Bar -->
+                  <div class='share-bar'>
+                    <span class='share-label'><i class='fas fa-share-alt'/> Share:</span>
+                    <a class='share-btn fb' expr:href='&quot;https://www.facebook.com/sharer/sharer.php?u=&quot; + data:post.url' rel='noopener' target='_blank'>
+                      <i class='fab fa-facebook-f'/> Facebook
+                    </a>
+                    <a class='share-btn tw' expr:href='&quot;https://twitter.com/intent/tweet?url=&quot; + data:post.url + &quot;&amp;text=&quot; + data:post.title' rel='noopener' target='_blank'>
+                      <i class='fab fa-x-twitter'/> X
+                    </a>
+                    <a class='share-btn wa' expr:href='&quot;https://wa.me/?text=&quot; + data:post.title + &quot; &quot; + data:post.url' rel='noopener' target='_blank'>
+                      <i class='fab fa-whatsapp'/> WhatsApp
+                    </a>
+                    <a class='share-btn li' expr:href='&quot;https://www.linkedin.com/shareArticle?url=&quot; + data:post.url' rel='noopener' target='_blank'>
+                      <i class='fab fa-linkedin-in'/> LinkedIn
+                    </a>
+                    <button class='share-btn cp' id='copyUrlBtn' onclick='copyUrl()' type='button'>
+                      <i class='fas fa-link'/> Copy
+                    </button>
+                  </div>
+
+                  <!-- Tags -->
+                  <b:if cond='data:post.labels'>
+                    <div style='margin:10px 0 24px;'>
+                      <strong style='font-size:13px;color:var(--text-muted);margin-right:8px;'>
+                        <i class='fas fa-tags'/> Tags:
+                      </strong>
+                      <b:loop values='data:post.labels' var='label'>
+                        <a class='tag-pill' expr:href='data:label.url'><data:label.name/></a>
+                      </b:loop>
+                    </div>
+                  </b:if>
+
+                  <!-- Author Box -->
+                  <div class='author-box'>
+                    <b:if cond='data:post.author.authorPhoto'>
+                      <img alt='' class='author-avatar' expr:src='data:post.author.authorPhoto.url'/>
+                    </b:if>
+                    <div>
+                      <div class='author-name'><data:post.author.name/></div>
+                      <p class='author-bio'>Career development expert sharing actionable advice to help professionals worldwide advance their careers, land better jobs, and achieve their full potential.</p>
+                      <div class='author-social'>
+                        <a href='/' title='Twitter'><i class='fab fa-x-twitter'/></a>
+                        <a href='/' title='LinkedIn'><i class='fab fa-linkedin-in'/></a>
+                        <a href='/' title='Email'><i class='fas fa-envelope'/></a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Related Posts -->
+                  <div class='related-posts'>
+                    <div class='section-header'>
+                      <h3 class='section-title'>Related Articles</h3>
+                    </div>
+                    <!-- Blogger Label widget for related posts -->
+                    <b:if cond='data:post.labels'>
+                      <b:widget id='Label1' locked='false' title='Related Posts' type='Label'>
+                        <b:includable id='main'>
+                          <div class='related-grid'>
+                            <b:loop values='data:labels' var='label' index='i'>
+                              <b:if cond='data:i &lt; 3'>
+                                <div class='post-card'>
+                                  <div class='post-card-body'>
+                                    <div class='post-card-cat'><data:label.name/></div>
+                                    <div class='post-card-title'><a expr:href='data:label.url'>More in <data:label.name/> →</a></div>
+                                  </div>
+                                </div>
+                              </b:if>
+                            </b:loop>
+                          </div>
+                        </b:includable>
+                      </b:widget>
+                    </b:if>
+                  </div>
+
+                  <!-- Comments -->
+                  <div class='comments-wrap'>
+                    <h3 class='comments-title'><i class='fas fa-comment-dots'/> Comments</h3>
+                    <b:include name='comment-form'/>
+                    <b:include name='threaded-comment-form'/>
+                  </div>
+
+                </article>
+              </b:loop>
+            </b:includable>
+          </b:widget>
+        </b:if>
+        <!-- /item -->
+
+        <!-- SEARCH / LABEL PAGE -->
+        <b:if cond='data:blog.pageType == &quot;searchQuery&quot; or data:blog.pageType == &quot;searchLabel&quot;'>
+          <div class='section-header'>
+            <h2 class='section-title'>
+              <b:if cond='data:blog.pageType == &quot;searchLabel&quot;'>
+                <i class='fas fa-tag'/> <data:blog.searchLabel/>
+              <b:else/>
+                <i class='fas fa-search'/> Results for: <data:blog.searchQuery/>
+              </b:if>
+            </h2>
+          </div>
+          <b:widget id='Blog3' locked='true' title='Blog Posts' type='Blog'>
+            <b:includable id='main'>
+              <div style='display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;'>
+                <b:loop values='data:posts' var='post'>
+                  <article class='post-card'>
+                    <div class='post-card-thumb-wrap'>
+                      <b:if cond='data:post.featuredImage'>
+                        <img alt='' class='post-card-thumb' expr:src='data:post.featuredImage.url' loading='lazy'/>
+                      </b:if>
+                    </div>
+                    <div class='post-card-body'>
+                      <h3 class='post-card-title'><a expr:href='data:post.url'><data:post.title/></a></h3>
+                      <p class='post-card-excerpt'><data:post.snippet length='80'/>...</p>
+                      <div class='post-card-footer'>
+                        <span><data:post.author.name/></span>
+                        <span><data:post.dateHeader/></span>
+                      </div>
+                    </div>
+                  </article>
+                </b:loop>
+              </div>
+              <div class='clg-pagination'>
+                <b:include name='nextprev'/>
+              </div>
+            </b:includable>
+          </b:widget>
+        </b:if>
+
+        <!-- STATIC PAGE -->
+        <b:if cond='data:blog.pageType == &quot;static_page&quot;'>
+          <b:widget id='Blog4' locked='true' title='Blog Posts' type='Blog'>
+            <b:includable id='main'>
+              <b:loop values='data:posts' var='post'>
+                <h1 class='post-headline'><data:post.title/></h1>
+                <div class='post-body'><data:post.body/></div>
+              </b:loop>
+            </b:includable>
+          </b:widget>
+        </b:if>
+
+      </div>
+      <!-- /content -->
+
+      <!-- === SIDEBAR === -->
+      <aside class='clg-sidebar' aria-label='Sidebar'>
+
+        <!-- Newsletter Widget -->
+        <div class='newsletter-widget' id='newsletter'>
+          <div class='newsletter-icon'><i class='fas fa-paper-plane'/></div>
+          <h3 class='newsletter-title'>Join 50,000+ Readers</h3>
+          <p class='newsletter-desc'>Get weekly career tips, job alerts, and exclusive resources delivered to your inbox.</p>
+          <div class='newsletter-form'>
+            <input class='newsletter-input' placeholder='Your email address' type='email'/>
+            <button class='newsletter-btn' type='button'>Subscribe Free <i class='fas fa-arrow-right'/></button>
+          </div>
+        </div>
+
+        <!-- Ad: Sidebar Rectangle -->
+        <div class='ad-rectangle ad-sidebar'>
+          <div class='ad-label'>Advertisement</div>
+          <!-- AdSense 300x250 -->
+        </div>
+
+        <!-- Popular Posts -->
+        <div class='sidebar-widget'>
+          <h3 class='widget-title'><i class='fas fa-fire'/> Trending Now</h3>
+          <b:widget id='PopularPosts1' locked='false' title='Popular Posts' type='PopularPosts'>
+            <b:widget-settings>
+              <b:widget-setting name='numItemsToShow'>7</b:widget-setting>
+              <b:widget-setting name='showThumbnails'>true</b:widget-setting>
+            </b:widget-settings>
+            <b:includable id='main'>
+              <div class='trending-list'>
+                <b:loop values='data:posts' var='post' index='i'>
+                  <div class='trending-item'>
+                    <div class='trending-num' expr:class='data:i &lt; 3 ? &quot;trending-num top&quot; : &quot;trending-num&quot;'>
+                      <b:eval expr='data:i + 1'/>
+                    </div>
+                    <div>
+                      <div class='trending-title'>
+                        <a expr:href='data:post.href'><data:post.title/></a>
+                      </div>
+                      <div class='trending-cat'><i class='fas fa-clock'/> <data:post.datePublished/></div>
+                    </div>
+                  </div>
+                </b:loop>
+              </div>
+            </b:includable>
+          </b:widget>
+        </div>
+
+        <!-- Ad: Sidebar Mid -->
+        <div class='ad-rectangle ad-sidebar'>
+          <div class='ad-label'>Sponsored</div>
+          <!-- AdSense 300x250 -->
+        </div>
+
+        <!-- Categories Widget -->
+        <div class='sidebar-widget'>
+          <h3 class='widget-title'><i class='fas fa-layer-group'/> Categories</h3>
+          <b:widget id='Label2' locked='false' title='Labels' type='Label'>
+            <b:widget-settings>
+              <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
+              <b:widget-setting name='display'>list</b:widget-setting>
+              <b:widget-setting name='selectedLabelsList'/>
+              <b:widget-setting name='showType'>ALL</b:widget-setting>
+            </b:widget-settings>
+            <b:includable id='main'>
+              <div class='tags-cloud'>
+                <b:loop values='data:labels' var='label'>
+                  <a class='tag-pill' expr:href='data:label.url'>
+                    <data:label.name/> (<data:label.count/>)
+                  </a>
+                </b:loop>
+              </div>
+            </b:includable>
+          </b:widget>
+        </div>
+
+        <!-- Stats Widget -->
+        <div class='sidebar-widget'>
+          <h3 class='widget-title'><i class='fas fa-chart-bar'/> By the Numbers</h3>
+          <div class='stats-grid'>
+            <div class='stat-card'>
+              <div class='stat-num'>50K+</div>
+              <div class='stat-label'>Monthly Readers</div>
+            </div>
+            <div class='stat-card'>
+              <div class='stat-num'>500+</div>
+              <div class='stat-label'>Articles</div>
+            </div>
+            <div class='stat-card'>
+              <div class='stat-num'>120+</div>
+              <div class='stat-label'>Countries</div>
+            </div>
+            <div class='stat-card'>
+              <div class='stat-num'>2019</div>
+              <div class='stat-label'>Founded</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Archive Widget -->
+        <div class='sidebar-widget'>
+          <h3 class='widget-title'><i class='fas fa-archive'/> Archives</h3>
+          <b:widget id='BlogArchive1' locked='false' title='Blog Archive' type='BlogArchive'>
+            <b:widget-settings>
+              <b:widget-setting name='showOption'>MONTHLY</b:widget-setting>
+              <b:widget-setting name='showStyle'>FLAT</b:widget-setting>
+              <b:widget-setting name='displayType'>FLAT</b:widget-setting>
+              <b:widget-setting name='monthFormat'>SHORTMONTH</b:widget-setting>
+            </b:widget-settings>
+            <b:includable id='main'>
+              <div class='tags-cloud'>
+                <b:loop values='data:data' var='i'>
+                  <a class='tag-pill' expr:href='data:i.url'><data:i.name/> (<data:i.post-count/>)</a>
+                </b:loop>
+              </div>
+            </b:includable>
+          </b:widget>
+        </div>
+
+        <!-- Sticky Ad -->
+        <div class='ad-rectangle ad-sidebar' style='position:sticky;top:calc(var(--header-h) + 60px + 8px);'>
+          <div class='ad-label'>Advertisement</div>
+          <!-- AdSense 300x600 Sticky -->
+        </div>
+
+      </aside>
+      <!-- /sidebar -->
+
+    </div>
+    <!-- /layout -->
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer id='clg-footer' role='contentinfo'>
+    <div class='footer-top'>
+
+      <!-- Brand -->
+      <div class='footer-brand'>
+        <a class='clg-logo' href='/' style='margin-bottom:14px;display:inline-flex;'>
+          <div class='logo-icon'><i class='fas fa-chart-line'/></div>
+          <div class='logo-text'>
+            <span class='logo-name'>Career Lift Global</span>
+            <span class='logo-tagline'>Elevate Your Career</span>
+          </div>
+        </a>
+        <p class='footer-brand-desc'>
+          Your trusted resource for career development, job search strategies, resume writing, and professional growth. Helping 50,000+ professionals worldwide reach their potential.
+        </p>
+        <div class='footer-social'>
+          <a href='/' title='Facebook'><i class='fab fa-facebook-f'/></a>
+          <a href='/' title='Twitter/X'><i class='fab fa-x-twitter'/></a>
+          <a href='/' title='LinkedIn'><i class='fab fa-linkedin-in'/></a>
+          <a href='/' title='Instagram'><i class='fab fa-instagram'/></a>
+          <a href='/' title='YouTube'><i class='fab fa-youtube'/></a>
+          <a href='/' title='WhatsApp'><i class='fab fa-whatsapp'/></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <div class='footer-col-title'>Career Tools</div>
+        <div class='footer-links'>
+          <a href='/search/label/Resume'><i class='fas fa-chevron-right'/> Resume Writing</a>
+          <a href='/search/label/Interview'><i class='fas fa-chevron-right'/> Interview Prep</a>
+          <a href='/search/label/LinkedIn'><i class='fas fa-chevron-right'/> LinkedIn Tips</a>
+          <a href='/search/label/Negotiation'><i class='fas fa-chevron-right'/> Salary Guide</a>
+          <a href='/search/label/Networking'><i class='fas fa-chevron-right'/> Networking</a>
+          <a href='/search/label/Skills'><i class='fas fa-chevron-right'/> Skills &amp; Learning</a>
+        </div>
+      </div>
+
+      <!-- Jobs -->
+      <div>
+        <div class='footer-col-title'>Find Jobs</div>
+        <div class='footer-links'>
+          <a href='/search/label/Remote Jobs'><i class='fas fa-chevron-right'/> Remote Jobs</a>
+          <a href='/search/label/Entry Level'><i class='fas fa-chevron-right'/> Entry Level</a>
+          <a href='/search/label/International'><i class='fas fa-chevron-right'/> International</a>
+          <a href='/search/label/Scholarships'><i class='fas fa-chevron-right'/> Scholarships</a>
+          <a href='/search/label/Internships'><i class='fas fa-chevron-right'/> Internships</a>
+          <a href='/search/label/Freelance'><i class='fas fa-chevron-right'/> Freelancing</a>
+        </div>
+      </div>
+
+      <!-- Company -->
+      <div>
+        <div class='footer-col-title'>Company</div>
+        <div class='footer-links'>
+          <a href='/p/about.html'><i class='fas fa-chevron-right'/> About Us</a>
+          <a href='/p/contact.html'><i class='fas fa-chevron-right'/> Contact</a>
+          <a href='/p/advertise.html'><i class='fas fa-chevron-right'/> Advertise</a>
+          <a href='/p/write-for-us.html'><i class='fas fa-chevron-right'/> Write for Us</a>
+          <a href='/p/privacy-policy.html'><i class='fas fa-chevron-right'/> Privacy Policy</a>
+          <a href='/p/disclaimer.html'><i class='fas fa-chevron-right'/> Disclaimer</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class='footer-bottom'>
+      <div>
+        &copy; <script>document.write(new Date().getFullYear())</script> Career Lift Global. All rights reserved.
+        Built with <i class='fas fa-heart' style='color:#E8A020;'/> for career growth worldwide.
+      </div>
+      <div style='display:flex;gap:16px;'>
+        <a href='/p/privacy-policy.html'>Privacy</a>
+        <a href='/p/disclaimer.html'>Disclaimer</a>
+        <a href='/p/contact.html'>Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button aria-label='Scroll to top' id='scroll-top' title='Back to top'>
+    <i class='fas fa-chevron-up'/>
+  </button>
+
+  <!-- Cookie Banner -->
+  <div id='clg-cookie' role='alert'>
+    <span>
+      We use cookies to improve your experience. By using our site, you agree to our
+      <a href='/p/privacy-policy.html'>Privacy Policy</a>.
+    </span>
+    <button class='cookie-accept' id='cookieAccept' type='button'>Accept &amp; Continue</button>
+  </div>
+
+  <!-- ========== SCRIPTS ========== -->
+  <script>
+  //<![CDATA[
+
+  // === SEARCH OVERLAY ===
+  const searchToggle = document.getElementById('searchToggle');
+  const searchOverlay = document.getElementById('clg-search');
+  const searchClose = document.getElementById('searchClose');
+  if (searchToggle && searchOverlay) {
+    searchToggle.addEventListener('click', () => {
+      searchOverlay.classList.add('open');
+      const inp = searchOverlay.querySelector('input');
+      if (inp) inp.focus();
+    });
+    searchClose.addEventListener('click', () => searchOverlay.classList.remove('open'));
+    searchOverlay.addEventListener('click', e => {
+      if (e.target === searchOverlay) searchOverlay.classList.remove('open');
+    });
+  }
+
+  // === MOBILE NAV ===
+  const mobileToggle = document.getElementById('mobileToggle');
+  const mobileNav = document.getElementById('clg-mobile-nav');
+  const mobileClose = document.getElementById('mobileClose');
+  if (mobileToggle && mobileNav) {
+    mobileToggle.addEventListener('click', () => {
+      mobileNav.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+    const closeMobile = () => {
+      mobileNav.classList.remove('open');
+      document.body.style.overflow = '';
+    };
+    if (mobileClose) mobileClose.addEventListener('click', closeMobile);
+  }
+
+  // === SCROLL TO TOP ===
+  const scrollTopBtn = document.getElementById('scroll-top');
+  if (scrollTopBtn) {
+    window.addEventListener('scroll', () => {
+      scrollTopBtn.classList.toggle('show', window.scrollY > 400);
+    }, { passive: true });
+    scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  }
+
+  // === READING PROGRESS BAR ===
+  const progressBar = document.getElementById('reading-progress');
+  if (progressBar) {
+    const isPost = document.querySelector('.post-body');
+    if (isPost) {
+      window.addEventListener('scroll', () => {
+        const docH = document.body.scrollHeight - window.innerHeight;
+        const scrolled = (window.scrollY / docH) * 100;
+        progressBar.style.width = Math.min(scrolled, 100) + '%';
+      }, { passive: true });
+    }
+  }
+
+  // === SHARE: COPY URL ===
+  function copyUrl() {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      const btn = document.getElementById('copyUrlBtn');
+      if (btn) {
+        btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+        setTimeout(() => { btn.innerHTML = '<i class="fas fa-link"></i> Copy'; }, 2000);
+      }
+    });
+  }
+
+  // === COOKIE BANNER ===
+  const cookieBanner = document.getElementById('clg-cookie');
+  const cookieAccept = document.getElementById('cookieAccept');
+  if (cookieBanner && !localStorage.getItem('clg_cookie_ok')) {
+    setTimeout(() => cookieBanner.classList.add('show'), 1500);
+  }
+  if (cookieAccept) {
+    cookieAccept.addEventListener('click', () => {
+      localStorage.setItem('clg_cookie_ok', '1');
+      cookieBanner.classList.remove('show');
+    });
+  }
+
+  // === ACTIVE CATEGORY CHIP ===
+  const path = window.location.pathname;
+  document.querySelectorAll('.cat-chip').forEach(chip => {
+    chip.classList.toggle('active', chip.getAttribute('href') === path || (path === '/' && chip.getAttribute('href') === '/'));
+  });
+
+  // === LAZY LOAD IMAGES (native + fallback) ===
+  if ('loading' in HTMLImageElement.prototype) {
+    // Native lazy loading supported
+  } else {
+    const images = document.querySelectorAll('img[loading="lazy"]');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.src = e.target.dataset.src || e.target.src; observer.unobserve(e.target); } });
+    }, { rootMargin: '200px' });
+    images.forEach(img => observer.observe(img));
+  }
+
+  // === STICKY SIDEBAR AD INIT ===
+  // Already handled via CSS position:sticky
+
+  //]]>
+  </script>
+
+</body>
+</html>
