@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Career Lift Global — Energize Africa Public Health Fellows 2026</title>
+  <desc id="desc">Fellowship opportunity graphic with application support WhatsApp number.</desc>
+  <rect width="1200" height="630" fill="#F5F4EF"/>
+  <rect width="1200" height="108" fill="#0B1F33"/>
+  <rect x="0" y="108" width="18" height="522" fill="#D5AD60"/>
+  <text x="58" y="48" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#FFFFFF" letter-spacing="2">CAREER LIFT GLOBAL</text>
+  <text x="58" y="83" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#D5AD60" letter-spacing="1.5">VERIFIED FELLOWSHIP OPPORTUNITY</text>
+
+  <text x="58" y="170" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="800" fill="#0B1F33">ENERGIZE AFRICA</text>
+  <text x="58" y="220" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="800" fill="#0B1F33">PUBLIC HEALTH FELLOWS</text>
+  <text x="58" y="263" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" fill="#0E5B5B">2026 • SECOND COHORT</text>
+
+  <rect x="58" y="292" width="575" height="92" rx="14" fill="#FFFFFF" stroke="#D5AD60" stroke-width="2"/>
+  <text x="82" y="328" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#0E5B5B">15 POSITIONS</text>
+  <text x="82" y="358" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#0B1F33">12 MONTHS</text>
+  <text x="300" y="328" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#0E5B5B">US$27,200</text>
+  <text x="300" y="358" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#0B1F33">gross annual remuneration</text>
+
+  <text x="58" y="424" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#3B4650">For qualified African professionals in public health,</text>
+  <text x="58" y="451" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#3B4650">health policy, development and related fields.</text>
+
+  <rect x="58" y="490" width="575" height="96" rx="16" fill="#0E5B5B"/>
+  <text x="82" y="522" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#D5AD60">NEED HELP APPLYING?</text>
+  <text x="82" y="552" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="800" fill="#FFFFFF">WhatsApp: +250 792 414 383</text>
+  <text x="82" y="575" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#F5F4EF">Career Lift Global • Application Support</text>
+
+  <g transform="translate(760,165)">
+    <circle cx="175" cy="175" r="150" fill="#E7F0EE"/>
+    <circle cx="175" cy="175" r="105" fill="#FFFFFF" stroke="#0E5B5B" stroke-width="8"/>
+    <path d="M175 92 L175 258 M92 175 L258 175" stroke="#D5AD60" stroke-width="26" stroke-linecap="round"/>
+    <circle cx="175" cy="175" r="34" fill="#0E5B5B"/>
+    <path d="M175 65 C132 65 98 87 76 119 M175 65 C218 65 252 87 274 119 M175 285 C132 285 98 263 76 231 M175 285 C218 285 252 263 274 231" fill="none" stroke="#0E5B5B" stroke-width="8" stroke-linecap="round"/>
+    <path d="M42 175 H88 M262 175 H308 M175 42 V88 M175 262 V308" stroke="#0B1F33" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="175" cy="30" r="10" fill="#D5AD60"/>
+    <circle cx="320" cy="175" r="10" fill="#D5AD60"/>
+    <circle cx="175" cy="320" r="10" fill="#D5AD60"/>
+    <circle cx="30" cy="175" r="10" fill="#D5AD60"/>
+  </g>
+
+  <text x="755" y="385" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#0B1F33">AFRICA • HEALTH • DEVELOPMENT</text>
+  <text x="755" y="418" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#3B4650">Application deadline: November 23, 2026</text>
+  <rect x="755" y="452" width="300" height="3" fill="#D5AD60"/>
+  <text x="755" y="490" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#3B4650">Scholarships • Jobs • Fellowships</text>
+  <text x="755" y="518" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#3B4650">Internships • Global Opportunities</text>
+  <text x="755" y="565" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#0E5B5B">careerliftglobal.com</text>
+</svg>
