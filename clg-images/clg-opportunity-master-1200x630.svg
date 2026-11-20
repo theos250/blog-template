@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+<title id="title">Career Lift Global Opportunity Template</title>
+<desc id="desc">Reusable Career Lift Global 1200 by 630 opportunity graphic template.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#0B1F33"/>
+    <stop offset="1" stop-color="#0E5B5B"/>
+  </linearGradient>
+</defs>
+<rect width="1200" height="630" fill="#F5F4EF"/>
+<rect x="0" y="0" width="1200" height="630" fill="url(#bg)"/>
+<circle cx="1070" cy="90" r="170" fill="#D5AD60" opacity=".12"/>
+<circle cx="1140" cy="560" r="230" fill="#F5F4EF" opacity=".06"/>
+<rect x="64" y="54" width="1072" height="522" rx="28" fill="none" stroke="#F5F4EF" stroke-opacity=".18"/>
+<text x="86" y="103" fill="#F5F4EF" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="700" letter-spacing="2">CAREER LIFT GLOBAL</text>
+<rect x="86" y="132" width="292" height="42" rx="21" fill="#D5AD60"/>
+<text x="232" y="160" text-anchor="middle" fill="#0B1F33" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="800" letter-spacing="1.2">VERIFIED OPPORTUNITY</text>
+<text x="86" y="250" fill="#F5F4EF" font-family="Arial,Helvetica,sans-serif" font-size="55" font-weight="800">OPPORTUNITY</text>
+<text x="86" y="315" fill="#F5F4EF" font-family="Arial,Helvetica,sans-serif" font-size="55" font-weight="800">HEADLINE</text>
+<text x="86" y="365" fill="#F5F4EF" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="600">KEY DETAIL • KEY DETAIL • KEY DETAIL</text>
+<rect x="86" y="414" width="500" height="86" rx="18" fill="#F5F4EF" fill-opacity=".10" stroke="#F5F4EF" stroke-opacity=".20"/>
+<text x="110" y="449" fill="#F5F4EF" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700">Need help applying?</text>
+<text x="110" y="479" fill="#D5AD60" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="800">WhatsApp: +250 792 414 383</text>
+<text x="86" y="548" fill="#F5F4EF" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700">Career Lift Global • Application Support</text>
+<text x="1110" y="548" text-anchor="end" fill="#F5F4EF" opacity=".75" font-family="Arial,Helvetica,sans-serif" font-size="15">CATEGORY • REGION</text>
+</svg>
