@@ -55,9 +55,9 @@ def parse_timestamp(value: str | None) -> str | None:
         return None
 
 
-def fetch_xml(url: str, expected_host: str) -> bytes:
+def fetch_xml(url: str, allowed_feed_hosts: set[str]) -> bytes:
     parsed = urlparse(url)
-    if parsed.scheme != "https" or parsed.hostname != expected_host:
+    if parsed.scheme != "https" or not parsed.hostname or parsed.hostname.lower() not in allowed_feed_hosts:
         raise RuntimeError(f"Refusing unexpected feed/pagination host: {url}")
     request = Request(url, headers={
         "User-Agent": USER_AGENT,
@@ -70,6 +70,11 @@ def fetch_xml(url: str, expected_host: str) -> bytes:
 
 
 def discover_posts(feed_url: str, canonical_host: str, max_pages: int = 100) -> dict[str, str | None]:
+    initial_host = urlparse(feed_url).hostname
+    if not initial_host:
+        raise RuntimeError("Blogger feed URL has no hostname")
+    # Blogger may rewrite paginated Atom links to its canonical feed host.
+    allowed_feed_hosts = {initial_host.lower(), "www.blogger.com", "blogger.com"}
     posts: dict[str, str | None] = {}
     visited: set[str] = set()
     current: str | None = feed_url
@@ -84,7 +89,7 @@ def discover_posts(feed_url: str, canonical_host: str, max_pages: int = 100) -> 
             raise RuntimeError(f"Feed exceeded safety limit of {max_pages} pages")
 
         try:
-            root = ET.fromstring(fetch_xml(current, canonical_host))
+            root = ET.fromstring(fetch_xml(current, allowed_feed_hosts))
         except ET.ParseError as exc:
             raise RuntimeError(f"Invalid Atom XML at {current}: {exc}") from exc
 
@@ -113,7 +118,7 @@ def discover_posts(feed_url: str, canonical_host: str, max_pages: int = 100) -> 
         if current:
             # Validate pagination links before following them.
             parsed_next = urlparse(current)
-            if parsed_next.scheme != "https" or parsed_next.hostname != canonical_host:
+            if parsed_next.scheme != "https" or not parsed_next.hostname or parsed_next.hostname.lower() not in allowed_feed_hosts:
                 raise RuntimeError(f"Unexpected Atom next-link host: {current}")
         time.sleep(0.1)
 
